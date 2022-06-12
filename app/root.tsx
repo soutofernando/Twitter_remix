@@ -10,6 +10,7 @@ import {
 import Layout from "./Layout";
 
 import styles from "./tailwind.css";
+import PostProvider from "./utils/postProvider/PostProvider";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: styles },
@@ -29,7 +30,9 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Outlet />
+        <PostProvider>
+          <Outlet />
+        </PostProvider>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />

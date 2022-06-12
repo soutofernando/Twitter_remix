@@ -10,13 +10,13 @@ const Layout: FC = ({ children }) => {
             <NavBar />
 
             <div className='lg:flex'>
-                <div className='flex-2'>
+                <div className='flex-2 lg:border-r-2'>
                     <MenuBar />
                 </div>
                 <div className='flex-1'>
                     <main>{children}</main>
                 </div>
-                <div className='flex-2'>
+                <div className='flex-2 lg:border-l-2'>
                     <TrendContainer />
                 </div>
             </div>

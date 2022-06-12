@@ -8,9 +8,13 @@ interface Props {
 
 const PostContainer: FC<Props> = ({ post }) => {
     return (
-        <div className='xl:px-8 px-4 lg:border-r-2'>
-            <h1><span className='font-bold'>Home</span></h1>
-            {post.map((post) => (<Post userimg={post.img} userid={post.id} username={post.name} userpost={post.post} />))}
+        <div className='xl:px-8 px-4'>
+            <h1>
+                <span className='font-bold'>
+                    Home
+                </span>
+            </h1>
+            {post.map((post) => (<Post key={post.post} userimg={post.img} userid={post.id} username={post.name} userpost={post.post} />))}
         </div>
     )
 }

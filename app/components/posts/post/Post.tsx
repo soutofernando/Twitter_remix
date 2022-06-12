@@ -10,7 +10,6 @@ interface Props {
     userid: string
     userpost: string
     userimg: string
-
 }
 
 const Post: FC<Props> = ({ username, userimg, userid, userpost }) => {

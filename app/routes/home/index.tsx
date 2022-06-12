@@ -2,6 +2,7 @@ import { LoaderFunction } from '@remix-run/node'
 import { useLoaderData } from '@remix-run/react'
 import React from 'react'
 import { getPostApi } from '~/components/features/api/Api'
+import PostModal from '~/components/modal/PostModal'
 import PostContainer from '~/components/posts/postContainer/PostContainer'
 import Layout from '~/Layout'
 import { Posts } from '~/types/typespost'
@@ -19,6 +20,7 @@ const index = () => {
         <div>
             <Layout>
                 <PostContainer post={post} />
+                <PostModal />
             </Layout>
         </div>
     )
