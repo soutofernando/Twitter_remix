@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { FC } from 'react'
 
-const ProfileDescription = () => {
+interface Props {
+    userbio: string
+}
+
+const ProfileDescription: FC<Props> = ({ userbio }) => {
     return (
         <div>
-            <span>Formada universidade Federal de Minas gerais. 23 anos </span>
+            <span>{userbio}</span>
         </div>
     )
 }

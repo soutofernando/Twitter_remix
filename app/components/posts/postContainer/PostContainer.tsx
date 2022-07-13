@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { getPostsApi } from '~/types/typespost'
+import { getPostsApi } from '~/types/typesGetsApi'
 import Post from '../post/Post'
 
 interface Props {
@@ -14,7 +14,7 @@ const PostContainer: FC<Props> = ({ post }) => {
                     Home
                 </span>
             </h1>
-            {post.map((post) => (<Post key={post.post} userimg={post.img} userid={post.id} username={post.name} userpost={post.post} />))}
+            {post.map((post) => (<Post key={Math.random()} userimg={post.img} userid={post.id} username={post.name} userpost={post.post} postAttachment={post.postAttachment} />))}
         </div>
     )
 }

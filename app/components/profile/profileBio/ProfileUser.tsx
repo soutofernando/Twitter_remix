@@ -1,14 +1,17 @@
-import React from 'react'
+import React, { FC } from 'react'
 import ProfileUserId from './ProfileUserId'
 
+interface Props {
+    userName: string
+    userId: string
+}
 
-
-const ProfileUser = () => {
+const ProfileUser: FC<Props> = ({ userId, userName }) => {
     return (
         <div>
             <div className='font-bold text-lg mb-2'>
-                <span>Maria Ferraz</span>
-                <ProfileUserId />
+                <span>{userName}</span>
+                <ProfileUserId userId={userId}/>
             </div>
         </div>
     )

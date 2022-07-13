@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { FC } from 'react'
+interface Props {
+    userImg: string
+}
 
-const ProfileUserImg = () => {
+const ProfileUserImg: FC<Props> = ({ userImg }) => {
     return (
         <div>
-              <img className="h-36 w-36 rounded-full mr-2"
-                src="https://i.pinimg.com/736x/79/20/5a/79205af1ee919d14fe4217ba8b123bc9.jpg"
+            <img className="h-36 w-36 rounded-full mr-2"
+                src={userImg}
                 alt="profile user img" />
         </div>
     )

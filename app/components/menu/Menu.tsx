@@ -1,10 +1,10 @@
-import React, { useContext } from 'react'
+import React, { FC, useContext } from 'react'
 import { Link } from 'react-router-dom'
-import FilledBtn from '~/ui/filledbutton/FilledBtn'
 import { PostContext } from '~/utils/postProvider/PostProvider'
 import MenuNavigation from './menuNavigation/MenuNavigation'
 
-const MenuBar = () => {
+
+const MenuBar: FC = () => {
 
     const { setModalOpen } = useContext(PostContext)
 
@@ -14,7 +14,7 @@ const MenuBar = () => {
 
                 <MenuNavigation />
 
-                <div>
+                <div className='mt-5'>
                     <Link to="/home">
                         <button className='bg-bluetw p-4 text-white font-semibold rounded-full w-full' onClick={() => setModalOpen(true)}>Tweet</button>
                     </Link>

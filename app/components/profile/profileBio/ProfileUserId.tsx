@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { FC } from 'react'
 
-const ProfileUserId = () => {
+interface Props{
+    userId: string 
+}
+
+const ProfileUserId: FC<Props> = ({userId}) => {
     return (
         <div className='font-medium  text-sm text-gray-500'>
-            <span>@Maria_ferraz</span>
+            <span>@{userId}</span>
         </div>
     )
 }

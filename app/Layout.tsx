@@ -4,14 +4,17 @@ import NavBar from './components/common/navbar/Navbar'
 import MenuBar from './components/menu/Menu'
 import TrendContainer from './components/trends/trendContainer/TrendContainer'
 
+
+
 const Layout: FC = ({ children }) => {
+
     return (
         <div>
             <NavBar />
 
             <div className='lg:flex'>
                 <div className='flex-2 lg:border-r-2'>
-                    <MenuBar />
+                    <MenuBar  />
                 </div>
                 <div className='flex-1'>
                     <main>{children}</main>

@@ -7,7 +7,7 @@ import { PostContext } from '~/utils/postProvider/PostProvider'
 
 const PostModal = () => {
 
-    const { modalOpen, setModalOpen, validateSchemaTweetar, onSubmitTweet } = useContext(PostContext)
+    const { modalOpen, setModalOpen, validateSchemaTweetar, onSubmitTweet, onSelectFile, preview, onCloseModal } = useContext(PostContext)
 
     return (
 
@@ -38,7 +38,7 @@ const PostModal = () => {
                         >
                             <div className="relative bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-lg sm:w-full">
                                 <div >
-                                    <button className='p-2' onClick={() => setModalOpen(false)}>
+                                    <button className='p-2' onClick={onCloseModal}>
                                         <Icon className="w-7 h-7 text-bluetw" d="M6 18L18 6M6 6l12 12" />
                                     </button>
                                     <hr className='mt-1' />
@@ -64,13 +64,28 @@ const PostModal = () => {
                                                         {errors ? <span className='text-sm text-red-400 px-4'>{errors.inputPost}</span> : ""}
                                                     </div>
                                                 </div>
-                                                <div className="flex justify-end">
-                                                    <button
-                                                        type="submit"
-                                                        className="w-full inline-flex justify-center rounded-full border border-transparent shadow-sm px-4 py-2 bg-bluetw text-base font-medium text-white hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm"
-                                                    >
-                                                        Tweet
-                                                    </button>
+                                                <div className='flex justify-center p-6'>
+                                                    {preview ? <img src={preview} className="w-96 h-96" /> : ""}
+
+                                                </div>
+                                                <div className="flex justify-between items-center">
+                                                    <div className='p-2'>
+                                                        <section>
+                                                            <label>
+                                                                <Icon d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" className='w-7 h-7 text-bluetw cursor-pointer' />
+                                                                <input type="file" multiple accept='image/jpeg, image/png' onChange={onSelectFile} className="hidden" id="attached-image" />
+                                                            </label>
+                                                        </section>
+                                                    </div>
+
+                                                    <div>
+                                                        <button
+                                                            type="submit"
+                                                            className="w-full inline-flex justify-center rounded-full border border-transparent shadow-sm px-4 py-2 bg-bluetw text-base font-medium text-white hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm"
+                                                        >
+                                                            Tweet
+                                                        </button>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </Form >
@@ -83,6 +98,7 @@ const PostModal = () => {
                 </div>
             </div >
         </Transition.Root >
+
     )
 }
 
