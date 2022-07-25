@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom'
 
 const LoginContainer = () => {
     return (
-        <div className='flex justify-center py-11'>
+        <div className='flex justify-center py-11 w-full h-full'>
             <div className='bg-black rounded-2xl text-white w-124 h-132'>
                 <div className='justify-between xl:justify-start items-center flex p-4'>
                     <LoginBtnClose />
